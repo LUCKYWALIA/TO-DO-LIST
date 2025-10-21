@@ -1,10 +1,5 @@
-/* main.css - System Overload: Meltdown Theme */
 
-/* --- Keyframe Animations --- */
-
-/* 1. Aggressive, constant vibration/shake - MODIFIED FOR SLOWER SHAKE */
 @keyframes shake-and-tilt {
-    /* Duration increased to 1s. Displacement reduced from 1px/2px to 0.5px/1px. */
     0% { transform: perspective(1000px) rotateZ(0.1deg) translateX(0.5px); }
     25% { transform: perspective(1000px) rotateZ(-0.1deg) translateX(-0.5px); }
     50% { transform: perspective(1000px) rotateZ(0.05deg) translateX(1px); }
@@ -12,22 +7,19 @@
     100% { transform: perspective(1000px) rotateZ(0.1deg) translateX(0.5px); }
 }
 
-/* 2. Intense heat pulse/glow */
 @keyframes heat-pulse {
     0% { box-shadow: 0 0 30px #ff4500; }
     50% { box-shadow: 0 0 50px #ff0000; }
     100% { box-shadow: 0 0 30px #ff4500; }
 }
 
-/* --- Root Variables --- */
 :root {
-    --color-bg-meltdown: #0d0000;  /* Deep, fiery black background */
-    --color-fire-red: #ff0000;     /* Primary failure color */
-    --color-fire-orange: #ff4500;  /* Secondary heat color */
-    --color-text-alert: #ffcc00;   /* MODIFIED: Muted Alert Yellow for readability */
+    --color-bg-meltdown: #0d0000;  
+    --color-fire-red: #ff0000;     
+    --color-fire-orange: #ff4500;  
+    --color-text-alert: #ffcc00;   
 }
 
-/* --- Global & Background --- */
 body {
     font-family: 'Impact', 'Arial Black', sans-serif;
     background-color: var(--color-bg-meltdown);
@@ -39,10 +31,9 @@ body {
     min-height: 100vh;
 }
 
-/* --- Main Container (The Failing Core) --- */
 .flexbox {
     display: flex;
-    background: #1a0101; /* Extremely dark red base */
+    background: #1a0101; 
     border: 5px solid var(--color-fire-red);
     border-radius: 0;
     
@@ -51,18 +42,15 @@ body {
     min-height: 600px;
     overflow: hidden;
     
-    /* Simulate a shattered, unstable frame */
     clip-path: polygon(0% 5%, 95% 0%, 100% 95%, 5% 100%, 0% 90%);
     
-    /* Animation applied here: DURATION CHANGED FROM 0.2s to 1s */
     animation: shake-and-tilt 1s infinite alternate, heat-pulse 2s infinite;
 }
 
-/* --- Left Section (The Overheating Display) --- */
 .left {
     flex: 3;
     padding: 30px 40px;
-    background-color: rgba(255, 0, 0, 0.05); /* Faint red glow background */
+    background-color: rgba(255, 0, 0, 0.05); 
     border-right: 5px solid var(--color-fire-orange);
 }
 
@@ -72,7 +60,6 @@ body {
     margin: 0 0 10px 0;
     text-transform: uppercase;
     letter-spacing: 5px;
-    /* Intense heat distortion text shadow */
     text-shadow: 0 0 10px var(--color-fire-orange); 
 }
 
@@ -80,11 +67,9 @@ body {
     color: var(--color-text-alert);
     font-size: 1.1em;
     margin-bottom: 40px;
-    /* Text shadow kept for glow, but base color is now less bright */
     text-shadow: 0 0 5px var(--color-text-alert); 
 }
 
-/* --- Right Section (The Manual Override) --- */
 .right {
     flex: 1.5;
     display: flex;
@@ -120,7 +105,7 @@ body {
     font-size: 1.2em;
     font-weight: bold;
     text-transform: uppercase;
-    box-shadow: 0 0 20px var(--color-fire-red); /* Massive glow */
+    box-shadow: 0 0 20px var(--color-fire-red); 
     transition: background-color 0.1s;
 }
 
@@ -129,7 +114,6 @@ body {
     color: var(--color-bg-meltdown);
 }
 
-/* --- Task List Items (The Failing Log) --- */
 #add {
     margin-top: 10px;
 }
@@ -140,7 +124,6 @@ body {
     justify-content: space-between;
     padding: 10px 0;
     margin: 5px 0;
-    /* Red and orange striped divider for severe warning */
     border-bottom: 3px dashed var(--color-fire-orange); 
     transition: background-color 0.05s;
 }
@@ -154,11 +137,10 @@ body {
     margin: 0;
     padding-right: 15px;
     font-size: 1.2em;
-    color: var(--color-text-alert); /* Uses the new muted yellow */
-    text-shadow: 1px 1px 0 var(--color-fire-red); /* Aggressive displacement */
+    color: var(--color-text-alert); 
+    text-shadow: 1px 1px 0 var(--color-fire-red); 
 }
 
-/* Style for 'DONE' tasks (Items marked for immediate destruction/deletion) */
 .task-item p.done {
     text-decoration: none;
     color: #888;
@@ -176,7 +158,6 @@ body {
 }
 
 
-/* --- Action Buttons (Urgent Commands) --- */
 .task-item button {
     padding: 8px 12px;
     margin-left: 5px;
@@ -186,7 +167,7 @@ body {
     font-size: 0.85em;
     font-weight: bold;
     text-transform: uppercase;
-    color: var(--color-text-alert); /* Uses the new muted yellow */
+    color: var(--color-text-alert); 
     background-color: var(--color-fire-red);
     transition: background-color 0.1s;
 }
@@ -196,12 +177,11 @@ body {
     color: var(--color-bg-meltdown);
 }
 
-/* Responsive Adjustments */
 @media (max-width: 800px) {
     .flexbox {
         flex-direction: column;
         width: 100%;
-        clip-path: none; /* No complex clipping on mobile */
+        clip-path: none; 
     }
 
     .left {
@@ -222,4 +202,5 @@ body {
         width: 100%;
         margin-bottom: 10px;
     }
+
 }
